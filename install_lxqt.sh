@@ -18,5 +18,8 @@ mkdir ~/.lxqtpkgs
 cd ~/.lxqtpkgs
 
 lftp -c "open http://slackware.uk/people/alien/sbrepos/${SLACKVER}/${ARCH}/lxqt/ ; mirror -c -e -v"
+wget -c https://alien.slackbook.org/ktown/${SLACKVER}/latest/${ARCH}/kde/frameworks/kwindowsystem-5.70.0-${ARCH}-1alien.txz
 
 upgradepkg --reinstall --install-new *.t?z
+
+
