@@ -1,0 +1,15 @@
+#!/bin/bash
+
+alias ls="ls --color"
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv virtualenv-init -)"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=0
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+

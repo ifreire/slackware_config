@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-#  This script will Slackware multilib from Alien BOB repo.
-#  Change SLACKVER for that is installed on your pc.
+#  This script will install Slackware multilib from
+#  Alien BOB repo.
 #
 #  Run as root.
 #
@@ -14,11 +14,12 @@
 
 SLACKVER=current
 
-mkdir ~/.multilibpkgs
-cd ~/.multilibpkgs
+cd ~/Downloads/pkgs/multilib
 
 lftp -c "open http://bear.alienbase.nl/mirrors/people/alien/multilib/ ; mirror -c -e -v ${SLACKVER}"
 
 cd ${SLACKVER}
 upgradepkg --reinstall --install-new *.t?z
 upgradepkg --install-new slackware64-compat32/*-compat32/*.t?z
+
+exit 0
